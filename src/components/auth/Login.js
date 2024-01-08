@@ -47,7 +47,8 @@ const Login = () => {
         console.log(res.data);
         localStorage.setItem("userToken", JSON.stringify(res?.data?.token));
         dispatch(setData(res?.data?.user));
-        navigate("/");
+        navigate("/user");
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };

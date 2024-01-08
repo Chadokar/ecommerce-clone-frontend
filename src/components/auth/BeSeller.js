@@ -12,6 +12,7 @@ import { setShop } from "../redux/Action";
 const BeSeller = () => {
   const user = useSelector((state) => state.UserReducers);
   const dispatch = useDispatch();
+  const [error, setError] = useState("");
   // console.log(user);
 
   const [formData, setFormData] = useState({
@@ -50,7 +51,10 @@ const BeSeller = () => {
         dispatch(setShop(res?.data?.shop));
         navigate("/addproduct");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err.message);
+        setError(err?.response?.data?.error);
+      });
   };
 
   return (
@@ -125,6 +129,7 @@ const BeSeller = () => {
             type="number"
             required
           />
+          <h6 style={{ color: "red", fontSize: 10 }}>{error}</h6>
           <Button
             type="submit"
             variant="contained"

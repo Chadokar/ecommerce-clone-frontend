@@ -49,8 +49,8 @@ const MyForm = () => {
         console.log(res.data);
         localStorage.setItem("userToken", JSON.stringify(res?.data?.token));
         dispatch(setData(res?.data?.user));
-        window.location.reload();
         navigate("/user");
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };

@@ -122,7 +122,7 @@ const Navbar = () => {
             Cart
           </Button>
         </Link>
-        {shopId ? (
+        {user?.shopId ? (
           <Link to="/addproduct">
             <Button color="primary" startIcon={<StorefrontIcon />}>
               Add Product
