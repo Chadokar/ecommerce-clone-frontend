@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = process.env.BACKEND_URL;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

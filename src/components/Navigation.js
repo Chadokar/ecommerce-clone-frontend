@@ -47,6 +47,15 @@ export const Navigation = () => {
       protected: false,
     },
     {
+      path: "/",
+      element: (
+        <Suspense fallback={<h1>Loading</h1>}>
+          <UserHome />
+        </Suspense>
+      ),
+      protected: false,
+    },
+    {
       path: "/items",
       element: (
         <Suspense fallback={<h1>Loading</h1>}>
