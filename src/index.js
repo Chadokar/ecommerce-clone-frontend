@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
-axios.defaults.baseURL = process.env.BACKEND_URL;
+axios.defaults.baseURL = "https://eccomerce-clone-backend.onrender.com";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
